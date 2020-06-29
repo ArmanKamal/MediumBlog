@@ -4,8 +4,12 @@
 
 <div class="col-md-4 mx-auto">
     <div class="card card-body my-4">
-        <h2>{{object.title}}</h2>
-        <p>{{object.content}}</p>
+       <h2>Are you sure you want to delete?</h2>
+
+       <form method="POST">
+           {% csrf_token %}
+           <button class="btn btn-danger" type="submit">Delete</button>
+       </form>
     </div>
 </div>
 

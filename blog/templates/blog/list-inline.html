@@ -1,0 +1,14 @@
+<!-- <li><a href="{{object.get_absolute_url}}">{{object.title}}</a></li> -->
+
+<div class="card my-4 {% if not post.publish_date %} border border-danger {% endif %}">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title}}</h5>
+        <p class="card-text">{{ post.content|linebreaks|truncatewords:30 }}</p>
+        <small>{{ post.publish_date }}</small><br>
+    {% if not detail %}
+      {% if not post.publish_date %} Draft {% endif %}
+        <a href="{{ post.get_absolute_url }}"> View </a>
+      
+    {% endif %}
+    </div>
+</div>
